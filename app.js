@@ -1,13 +1,16 @@
 var missed = 0;
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
-const buttonStart = document.getElementById('overlay');
+const buttonStartDiv = document.getElementById('overlay');
 
 
-buttonStart.addEventListener('click', (e) => {
 
-console.log('hi');
 
+buttonStartDiv.addEventListener('click', (e) => {
+
+let title = buttonStartDiv.firstElementChild;
+title.style.display = 'none';
+buttonStartDiv.style.display = 'none';
 
 
 });
