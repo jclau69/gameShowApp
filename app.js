@@ -9,8 +9,8 @@ const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const buttonStartDiv = document.getElementById('overlay');
 
-function getRandomPhraseAsArray(array){
-const randomNumb = Math.floor(Math.random() * array) + 1;
+function getRandomPhraseAsArray(arrayNumb){
+const randomNumb = Math.floor(Math.random() * arrayNumb) + 1;
 return randomNumb;
 
 }
@@ -19,12 +19,9 @@ function findAphraseInArray(array){
 
 for(let i = 0; i < array.length; i++){
 
- array[i];
- if(i === 6){
+ console.log(array[i]);
 
-return 
 
-}
 }
 
 }
