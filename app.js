@@ -19,9 +19,12 @@ function findAphraseInArray(array){
 
 for(let i = 0; i < array.length; i++){
 
-let phraseArray = array[i];
+ array[i];
+ if(i === 6){
 
-return phraseArray;
+return 
+
+}
 }
 
 }
