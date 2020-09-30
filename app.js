@@ -36,6 +36,9 @@ for(let i = 0; i < phrases.length; i++){
 
  let letters = phraseSplit[i];
 
+ 
+
+const li = document.createElement('li');
 li.appendChild(letters);
 ul.appendChild(li);
 
