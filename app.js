@@ -24,7 +24,8 @@ function getRandomPhraseAsArray(){
 
 const divPhrase = document.getElementById('phrase');
 const ul = divPhrase.firstElementChild;
-const li = document.createElement('li');
+
+
 
 for(let i = 0; i < phrases.length; i++){
 
@@ -36,14 +37,14 @@ for(let i = 0; i < phrases.length; i++){
 
  let letters = phraseSplit[i];
 
- 
+
 
 const li = document.createElement('li');
-li.appendChild(letters);
+li.textContent = letters;
 ul.appendChild(li);
 
  }
- // return phraseSplit;
+
 }
 
   }
