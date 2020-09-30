@@ -8,7 +8,6 @@ var phrases = [
   'got a lot of nerves']
 
 const qwerty = document.getElementById('qwerty');
-
 const buttonStartDiv = document.getElementById('overlay');
 
 
@@ -23,25 +22,35 @@ return randomNumb;
 function getRandomPhraseAsArray(){
 // get a phrase from the Array and split it into characters.
 
+const divPhrase = document.getElementById('phrase');
+const ul = divPhrase.firstElementChild;
+const li = document.createElement('li');
+
 for(let i = 0; i < phrases.length; i++){
 
  let result = getRandom(phrases.indexOf([i]));
  let phraseFound = phrases[result];
  let phraseSplit = phraseFound.split("");
 
+ for(let i = 0; i < phraseSplit.length; i++){
 
- return phraseSplit;
+ let letters = phraseSplit[i];
 
+li.appendChild(letters);
+ul.appendChild(li);
+
+ }
+ // return phraseSplit;
 }
+
   }
 
-  function addPhraseToDisplay(){
+  /* function addPhraseToDisplay(){
     // do stuff any arr that is passed in, and add to `#phrase ul.
     const phraseDiv = document.getElementById('phrase');
     let ul = phraseDiv.firstElementChild;
     let li = document.createElement("li");
 
-    for(let i = 0; i < getRandomPhraseAsArray().length; i++){
 
       for(let i = 0; i < getRandomPhraseAsArray().length; i++){
 
@@ -52,11 +61,11 @@ for(let i = 0; i < phrases.length; i++){
     }
 
 
-    }
+  } */
 
 
 
-}
+
 
 buttonStartDiv.addEventListener('click', (e) => {
 
