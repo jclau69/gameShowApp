@@ -43,12 +43,18 @@ for(let i = 0; i < phrases.length; i++){
 
     for(let i = 0; i < getRandomPhraseAsArray().length; i++){
 
-      return getRandomPhraseAsArray();
+      for(let i = 0; i < getRandomPhraseAsArray().length; i++){
+
+     let randomCharacters = (getRandomPhraseAsArray()[i]);
+
+     console.log(randomCharacters);
 
     }
 
-    li.appendChild(characterSplit);
-    ul.appendChild(li);
+
+    }
+
+
 
 }
 
