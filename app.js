@@ -9,6 +9,9 @@ var phrases = [
 
 const qwerty = document.getElementById('qwerty');
 const buttonStartDiv = document.getElementById('overlay');
+const divPhrase = document.getElementById('phrase');
+const ul = divPhrase.firstElementChild;
+
 
 
 function getRandom(){
@@ -19,57 +22,48 @@ return randomNumb;
 
 }
 
-function getRandomPhraseAsArray(){
+function getRandomPhraseAsArray(arr){
 // get a phrase from the Array and split it into characters.
 
-const divPhrase = document.getElementById('phrase');
-const ul = divPhrase.firstElementChild;
 
 
 
 for(let i = 0; i < phrases.length; i++){
 
- let result = getRandom(phrases.indexOf([i]));
- let phraseFound = phrases[result];
- let phraseSplit = phraseFound.split("");
-
- for(let i = 0; i < phraseSplit.length; i++){
-
- let letters = phraseSplit[i];
+ let result = getRandom(arr.indexOf([i]));
+ let phraseFound = arr[result];
 
 
+ return phraseFound
 
-const li = document.createElement('li');
-li.textContent = letters;
-ul.appendChild(li);
-
- }
-
-}
 
   }
 
-  /* function addPhraseToDisplay(){
-    // do stuff any arr that is passed in, and add to `#phrase ul.
-    const phraseDiv = document.getElementById('phrase');
-    let ul = phraseDiv.firstElementChild;
-    let li = document.createElement("li");
-
-
-      for(let i = 0; i < getRandomPhraseAsArray().length; i++){
-
-     let randomCharacters = (getRandomPhraseAsArray()[i]);
-
-     console.log(randomCharacters);
-
     }
 
+ // let resultPhrase = getRandomPhraseAsArray(phrases);
 
-  } */
+  function checkLetter(){
+
+    const keyRow = document.getElementsByClassName('keyrow');
+    const buttonText = keyRow.children;
+    const li = document.createElement('li');
+
+    let array = getRandomPhraseAsArray(phrases);
+    let liListItems = li.textContent = array;
+    var match = [];
+
+    if(liListItems === buttonText.textContent) {
+
+      match.push('buttonText');
+    }
+
+return match;
 
 
 
 
+  }
 
 buttonStartDiv.addEventListener('click', (e) => {
 
