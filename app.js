@@ -11,59 +11,69 @@ const qwerty = document.getElementById('qwerty');
 const buttonStartDiv = document.getElementById('overlay');
 const divPhrase = document.getElementById('phrase');
 const ul = divPhrase.firstElementChild;
+const keyRow = document.getElementsByClassName('keyrow');
+const buttonText = keyRow.children;
 
-
-
-function getRandom(){
-  // get a random number.
-
-const randomNumb = Math.floor(Math.random() * (phrases.length)) ;
-return randomNumb;
-
-}
 
 function getRandomPhraseAsArray(arr){
 // get a phrase from the Array and split it into characters.
 
+for(let i = 0; i < arr.length; i++){
 
+let randomNumb = Math.floor(Math.random() * (arr.length));
+let phraseFound = arr[randomNumb];
 
-
-for(let i = 0; i < phrases.length; i++){
-
- let result = getRandom(arr.indexOf([i]));
- let phraseFound = arr[result];
-
-
- return phraseFound
+return phraseFound.split('');
 
 
   }
 
     }
 
- // let resultPhrase = getRandomPhraseAsArray(phrases);
+    function addToDisplay(arr) {
 
-  function checkLetter(){
+for(let i = 0; i < arr.length; i++){
 
-    const keyRow = document.getElementsByClassName('keyrow');
-    const buttonText = keyRow.children;
+const li = document.createElement('li');
+
+
+    if (arr[i] === ''){
+
+        li.className = 'space';
+
+      } else{
+
+        li.className = 'letter';
+      }
+
+      li.textContent = arr[i];
+        ul.appendChild(li);
+
+    }
+
+    }
+
+
+
+  /*function checkLetter(){
+
+
     const li = document.createElement('li');
 
     let array = getRandomPhraseAsArray(phrases);
     let liListItems = li.textContent = array;
     var match = [];
 
-    if(liListItems === buttonText.textContent) {
+if(liListItems.split('') === buttonText){
 
-      match.push('buttonText');
-    }
+      match.push(liListItems);
 
+}
 return match;
 
-
-
-
   }
+*/
+
 
 buttonStartDiv.addEventListener('click', (e) => {
 
