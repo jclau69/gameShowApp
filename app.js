@@ -40,7 +40,7 @@ ul.appendChild(li);
 li.textContent = arr[i];
 
 
-    if (arr[i] === ''){
+    if (arr[i] === ' '){
 
         li.className = 'space';
 
