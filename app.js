@@ -36,6 +36,9 @@ for(let i = 0; i < arr.length; i++){
 
 const li = document.createElement('li');
 
+ul.appendChild(li);
+li.textContent = arr[i];
+
 
     if (arr[i] === ''){
 
@@ -46,8 +49,7 @@ const li = document.createElement('li');
         li.className = 'letter';
       }
 
-      li.textContent = arr[i];
-        ul.appendChild(li);
+
 
     }
 
