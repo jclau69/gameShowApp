@@ -47,34 +47,39 @@ li.textContent = arr[i];
       } else{
 
         li.className = 'letter';
-      }
-
-
-
+       }
     }
-
-    }
-
+}
 
 
-  /*function checkLetter(){
+  function checkLetter() {
 
 
-    const li = document.createElement('li');
+liItems = ul.children;
 
-    let array = getRandomPhraseAsArray(phrases);
-    let liListItems = li.textContent = array;
-    var match = [];
+var match= [];
+const buttonText = keyRow.children;
 
-if(liListItems.split('') === buttonText){
 
-      match.push(liListItems);
+ if(liItems) {
+
+for(let i = 0; i< liItems.length; i++ ){
+
+  var match= [];
+  let matchLettersResult = liItems.length[i];
+
+if(matchLettersResult === buttonText.textContent){
+
+
+match.push(matchLettersResult);
 
 }
-return match;
+}
 
+ }
+return match;
   }
-*/
+
 
 
 buttonStartDiv.addEventListener('click', (e) => {
