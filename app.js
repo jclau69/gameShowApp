@@ -5,7 +5,7 @@ var phrases = [
   'a turn up for the books',
   'the world is your oyster',
   'by hook or by crook',
-  'got a lot of nerves']
+  'got a lot of nerves'];
 
 const qwerty = document.getElementById('qwerty');
 const buttonStartDiv = document.getElementById('overlay');
@@ -50,36 +50,28 @@ li.textContent = arr[i];
     }
 }
 
+function checkLetter(charax){
 
-  function checkLetter() {
-
-    const listItems = ul.children
-    const liLetters = listItems.textContent;
-    const keyRow = document.getElementsByClassName('keyrow');
-    const classButton = keyRow.children;
-    const textButton = classButton.textButton;
-
-var match= [];
-
- if(liItems) {
-
-for(let i = 0; i< liLetters.length; i++ ){
-
-  var match= [];
-  let matchLettersResult = liLetters.length[i];
-
-if(matchLettersResult === textButtonext.textContent) {
+const listItem = ul.children;
 
 
-match.push(matchLettersResult);
+let match = [];
 
+for (let i = 0; i<listItem.length;i++ ){
+
+let listItemResult = listItem[i].textContent;
+
+if (listItem.className === 'letter' && listItem === charax){
+
+match.push(listItemResult);
+
+  console.log(match);
+} else{
+
+  return null;
 }
 }
-
- }
-return match;
-  }
-
+}
 
 
 buttonStartDiv.addEventListener('click', (e) => {
