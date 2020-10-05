@@ -61,7 +61,7 @@ for (let i = 0; i<listItem.length;i++ ){
 
 let listItemResult = listItem[i].textContent;
 
-if (listItem.className === 'letter' && listItem === charax){
+if (listItem.className === 'letter' && listItemResult === charax){
 
 match.push(listItemResult);
 
