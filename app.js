@@ -70,9 +70,15 @@ match.push(charac);
 } else{
 
   return null;
+
 }
 }
 }
+
+addToDisplay(getRandomPhraseAsArray(phrases));
+checkLetter('b');
+
+
 
 
 buttonStartDiv.addEventListener('click', (e) => {
