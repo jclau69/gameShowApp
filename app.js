@@ -50,22 +50,23 @@ li.textContent = arr[i];
     }
 }
 
-function checkLetter(charax){
+function checkLetter(charac){
 
 const listItem = ul.children;
-
 
 let match = [];
 
 for (let i = 0; i<listItem.length;i++ ){
 
-let listItemResult = listItem[i].textContent;
+let listItemResult = listItem[i];
 
-if (listItem.className === 'letter' && listItemResult === charax){
+if (listItemResult.className === 'letter' && listItemResult.textContent === charac){
 
-match.push(listItemResult);
 
-  console.log(match);
+match.push(charac);
+
+  return match;
+
 } else{
 
   return null;
