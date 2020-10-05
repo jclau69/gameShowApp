@@ -11,8 +11,7 @@ const qwerty = document.getElementById('qwerty');
 const buttonStartDiv = document.getElementById('overlay');
 const divPhrase = document.getElementById('phrase');
 const ul = divPhrase.firstElementChild;
-const keyRow = document.getElementsByClassName('keyrow');
-const buttonText = keyRow.children;
+
 
 
 function getRandomPhraseAsArray(arr){
@@ -54,21 +53,22 @@ li.textContent = arr[i];
 
   function checkLetter() {
 
-
-liItems = ul.children;
+    const listItems = ul.children
+    const liLetters = listItems.textContent;
+    const keyRow = document.getElementsByClassName('keyrow');
+    const classButton = keyRow.children;
+    const textButton = classButton.textButton;
 
 var match= [];
-const buttonText = keyRow.children;
-
 
  if(liItems) {
 
-for(let i = 0; i< liItems.length; i++ ){
+for(let i = 0; i< liLetters.length; i++ ){
 
   var match= [];
-  let matchLettersResult = liItems.length[i];
+  let matchLettersResult = liLetters.length[i];
 
-if(matchLettersResult === buttonText.textContent){
+if(matchLettersResult === textButtonext.textContent) {
 
 
 match.push(matchLettersResult);
