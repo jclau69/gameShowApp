@@ -76,7 +76,9 @@ match.push(charac);
 }
 
 addToDisplay(getRandomPhraseAsArray(phrases));
-checkLetter('b');
+console.log(checkLetter('b'));
+
+
 
 
 
