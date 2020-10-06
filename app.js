@@ -50,7 +50,7 @@ li.textContent = arr[i];
     }
 }
 
-function checkLetter(charac){
+function checkLetter(){
 
 const listItem = ul.children;
 
@@ -60,7 +60,7 @@ for (let i = 0; i<listItem.length;i++ ){
 
 let listItemResult = listItem[i];
 
-if (listItemResult.className === 'letter' && listItemResult.textContent === charac){
+if (listItemResult.className === 'letter'){
 
 
 match = listItemResult.textContent;
@@ -81,16 +81,19 @@ return match;
 qwerty.addEventListener('click', (e) => {
 
 
-addToDisplay(getRandomPhraseAsArray(phrases));
-
-checkLetter(e.target.textButton);
-
-
 if(e.target.className !== 'chosen'){
 
   e.target.className = 'chosen';
 }
 
+let chosenClass = (getRandomPhraseAsArray(phrases));
+
+if(e.target.textContent === chosenClass){
+
+let liToDisplay = addToDisplay(chosenClass);
+checkLetter(liToDisplay);
+
+}
 
 });
 
