@@ -54,7 +54,7 @@ function checkLetter(charac){
 
 const listItem = ul.children;
 
-let match = [];
+let match = null;
 
 for (let i = 0; i<listItem.length;i++ ){
 
@@ -63,23 +63,36 @@ let listItemResult = listItem[i];
 if (listItemResult.className === 'letter' && listItemResult.textContent === charac){
 
 
-match.push(charac);
+match = listItemResult.textContent;
 
-  return match;
+listItemResult.classList.add('show');
 
-} else{
+} else {
 
-  return null;
+match = null;
 
 }
 }
+return match;
 }
+
+
+
+qwerty.addEventListener('click', (e) => {
+
 
 addToDisplay(getRandomPhraseAsArray(phrases));
-console.log(checkLetter('b'));
+
+checkLetter(e.target.textButton);
 
 
+if(e.target.className !== 'chosen'){
 
+  e.target.className = 'chosen';
+}
+
+
+});
 
 
 
