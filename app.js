@@ -67,10 +67,6 @@ match = listItemResult.textContent;
 
 listItemResult.classList.add('show');
 
-} else {
-
-match = null;
-
 }
 }
 return match;
