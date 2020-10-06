@@ -90,8 +90,11 @@ let chosenClass = (getRandomPhraseAsArray(phrases));
 
 if(e.target.textContent === chosenClass){
 
-let liToDisplay = addToDisplay(chosenClass);
-checkLetter(liToDisplay);
+
+let targetCharac = addToDisplay(e.target.textContent);
+
+
+
 
 }
 
