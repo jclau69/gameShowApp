@@ -1,4 +1,4 @@
-var missed = 0;
+var score = 0;
 var phrases = [
   'hold on to your hat',
   'birds of a feather flock together',
@@ -50,7 +50,7 @@ li.textContent = arr[i];
     }
 }
 
-function checkLetter(){
+function checkLetter(letter){
 
 const listItem = ul.children;
 
@@ -60,7 +60,7 @@ for (let i = 0; i<listItem.length;i++ ){
 
 let listItemResult = listItem[i];
 
-if (listItemResult.className === 'letter'){
+if (listItemResult.className === 'letter' && listItemResult.textContent === letter){
 
 
 match = listItemResult.textContent;
@@ -76,27 +76,25 @@ match = null;
 return match;
 }
 
-
+addToDisplay(getRandomPhraseAsArray(phrases));
 
 qwerty.addEventListener('click', (e) => {
+
 
 
 if(e.target.className !== 'chosen'){
 
   e.target.className = 'chosen';
+
 }
-
-let chosenClass = (getRandomPhraseAsArray(phrases));
-
-if(e.target.textContent === chosenClass){
+if(e.target.className === 'chosen' && checkLetter(e.target.textContent)) {
 
 
-let targetCharac = addToDisplay(e.target.textContent);
-
-
+score = score + 1;
 
 
 }
+
 
 });
 
