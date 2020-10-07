@@ -102,8 +102,11 @@ score = score + 1;
 ol.removeChild(oldLiChild);
 ol.appendChild(newImgLi);
 newImgLi.style.height = "35px";
-  newImgLi.style.width = "30px";
-  newImgLi.src = "../images/lostHeart.png";
+newImgLi.style.width = "30px";
+newImgLi.src = "../images/lostHeart.png " ;
+
+
+
 
 
 
