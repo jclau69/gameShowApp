@@ -81,7 +81,8 @@ qwerty.addEventListener('click', (e) => {
   const liOlChild = ol.firstElementChild;
   const imgLi = liOlChild.nextElementSibling;
   const newImgLi = document.createElement('img');
-  newImgLi.attribute = ' src="../images/liveHeart.png" height="35px" width="30px" ';
+
+newImgLi.attribute = ' src="../images/lostHeart.png" height="35px" width="30px" ';
 
 
 if(e.target.className !== 'chosen'){
@@ -100,13 +101,14 @@ score = score + 1;
 
 liOlChild.remove(imgLi);
 liOlChild.append(newImgLi);
+
 }
 
 });
 
-func checkWin() {
+function checkWin() {
 
-  
+
 }
 
 buttonStartDiv.addEventListener('click', (e) => {
