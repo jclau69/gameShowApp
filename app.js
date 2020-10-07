@@ -76,6 +76,12 @@ addToDisplay(getRandomPhraseAsArray(phrases));
 
 qwerty.addEventListener('click', (e) => {
 
+  const divScoreBoard = document.getElementById('scoreboard');
+  const ol = divScoreBoard.firstElementChild;
+  const liOlChild = ol.firstElementChild;
+  const imgLi = liOlChild.nextElementSibling;
+  const newImgLi = document.createElement('img');
+  newImgLi.attribute = ' src="../images/liveHeart.png" height="35px" width="30px" ';
 
 
 if(e.target.className !== 'chosen'){
@@ -89,12 +95,19 @@ if(e.target.className === 'chosen' && checkLetter(e.target.textContent)) {
 score = score + 1;
 
 
-}
+} else {
 
+
+liOlChild.remove(imgLi);
+liOlChild.append(newImgLi);
+}
 
 });
 
+func checkWin() {
 
+  
+}
 
 buttonStartDiv.addEventListener('click', (e) => {
 
