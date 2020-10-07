@@ -78,11 +78,11 @@ qwerty.addEventListener('click', (e) => {
 
   const divScoreBoard = document.getElementById('scoreboard');
   const ol = divScoreBoard.firstElementChild;
-  const liOlChild = ol.firstElementChild;
-  const imgLi = liOlChild.nextElementSibling;
-  const newImgLi = document.createElement('img');
+  const oldLiChild = ol.firstElementChild;
+  const newLi = document.createElement('li');
+  var newImgLi = document.createElement('img');
 
-newImgLi.attribute = ' src="../images/lostHeart.png" height="35px" width="30px" ';
+
 
 
 if(e.target.className !== 'chosen'){
@@ -96,11 +96,16 @@ if(e.target.className === 'chosen' && checkLetter(e.target.textContent)) {
 score = score + 1;
 
 
+
 } else {
 
+ol.removeChild(oldLiChild);
+ol.appendChild(newImgLi);
+newImgLi.style.height = "35px";
+  newImgLi.style.width = "30px";
+  newImgLi.src = "../images/lostHeart.png";
 
-liOlChild.remove(imgLi);
-liOlChild.append(newImgLi);
+
 
 }
 
@@ -108,6 +113,12 @@ liOlChild.append(newImgLi);
 
 function checkWin() {
 
+const listUlItems = ul.children;
+
+for(let i = 0; i < listUlItems.lenght; i++){
+
+
+}
 
 }
 
