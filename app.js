@@ -106,10 +106,6 @@ newImgLi.style.width = "30px";
 newImgLi.src = "../images/lostHeart.png " ;
 
 
-
-
-
-
 }
 
 });
@@ -117,13 +113,29 @@ newImgLi.src = "../images/lostHeart.png " ;
 function checkWin() {
 
 const listUlItems = ul.children;
+var letter;
+var show;
 
 for(let i = 0; i < listUlItems.lenght; i++){
 
+let listUlItems = listUlItems[i];
+
+if(listUlItems.className === 'letter' && listUlItems.className === 'show') {
+
+letter = listUlItems.textContent;
+show = listUlItems.textContent;
+
+}else if (letter.length === show.length) {
+
+   buttonStartDiv.firstElementChild.style.display = 'block';
+   buttonStartDiv.firstElementChild.textContent = 'Yeeeaaah you won!';
+   buttonStartDiv.firstElementChild.className = 'win';
+
 
 }
+  }
 
-}
+    }
 
 buttonStartDiv.addEventListener('click', (e) => {
 
