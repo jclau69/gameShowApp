@@ -14,6 +14,8 @@ const ul = divPhrase.firstElementChild;
 
 
 
+
+
 function getRandomPhraseAsArray(arr){
 // get a phrase from the Array and split it into characters.
 
@@ -49,6 +51,8 @@ li.textContent = arr[i];
        }
     }
 }
+
+
 
 function checkLetter(letter){
 
@@ -87,6 +91,7 @@ if(letter.length === show.length) {
    buttonStartDiv.style.display = 'flex';
 
 
+
  } else {
 
    if(score >= 4){
@@ -98,12 +103,23 @@ if(letter.length === show.length) {
 
    }
  }
+
+}
+
+function reLoadPage() {
+
+if(checkWin()) {
+
+return;
+}
+
 }
 
 addToDisplay(getRandomPhraseAsArray(phrases));
 
-
 qwerty.addEventListener('click', (e) => {
+
+
 
   const divScoreBoard = document.getElementById('scoreboard');
   const ol = divScoreBoard.firstElementChild;
@@ -138,6 +154,8 @@ score = score + 1;
 if (score === 5) {
 
   checkWin();
+
+
 }
 
 });
@@ -146,8 +164,12 @@ if (score === 5) {
 
 buttonStartDiv.addEventListener('click', (e) => {
 
+reLoadPage();
+
 let title = buttonStartDiv.firstElementChild;
 title.style.display = 'none';
 buttonStartDiv.style.display = 'none';
+
+
 
 });
