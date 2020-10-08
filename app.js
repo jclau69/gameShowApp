@@ -72,7 +72,36 @@ listItemResult.classList.add('show');
 return match;
 }
 
+function checkWin() {
+
+const letter = document.querySelectorAll('.letter');
+const show = document.querySelectorAll('.show');
+
+
+if(letter.length === show.length) {
+
+
+   buttonStartDiv.firstElementChild.style.display = 'block';
+   buttonStartDiv.firstElementChild.textContent = 'Yeeeaaah you won!';
+   buttonStartDiv.firstElementChild.className = 'win';
+   buttonStartDiv.style.display = 'flex';
+
+
+ } else {
+
+   if(score >= 4){
+
+     buttonStartDiv.firstElementChild.style.display = 'block';
+     buttonStartDiv.firstElementChild.textContent = 'Oh no! you loose!';
+     buttonStartDiv.firstElementChild.className = 'win';
+     buttonStartDiv.style.display = 'flex';
+
+   }
+ }
+}
+
 addToDisplay(getRandomPhraseAsArray(phrases));
+
 
 qwerty.addEventListener('click', (e) => {
 
@@ -83,18 +112,15 @@ qwerty.addEventListener('click', (e) => {
   var newImgLi = document.createElement('img');
 
 
-
-
 if(e.target.className !== 'chosen'){
 
   e.target.className = 'chosen';
 
 }
+
 if(e.target.className === 'chosen' && checkLetter(e.target.textContent)) {
 
-
-score = score + 1;
-
+checkWin();
 
 
 } else {
@@ -104,38 +130,19 @@ ol.appendChild(newImgLi);
 newImgLi.style.height = "35px";
 newImgLi.style.width = "30px";
 newImgLi.src = "../images/lostHeart.png " ;
+score = score + 1;
 
 
+}
+
+if (score === 5) {
+
+  checkWin();
 }
 
 });
 
-function checkWin() {
 
-const listUlItems = ul.children;
-var letter;
-var show;
-
-for(let i = 0; i < listUlItems.lenght; i++){
-
-let listUlItems = listUlItems[i];
-
-if(listUlItems.className === 'letter' && listUlItems.className === 'show') {
-
-letter = listUlItems.textContent;
-show = listUlItems.textContent;
-
-}else if (letter.length === show.length) {
-
-   buttonStartDiv.firstElementChild.style.display = 'block';
-   buttonStartDiv.firstElementChild.textContent = 'Yeeeaaah you won!';
-   buttonStartDiv.firstElementChild.className = 'win';
-
-
-}
-  }
-
-    }
 
 buttonStartDiv.addEventListener('click', (e) => {
 
