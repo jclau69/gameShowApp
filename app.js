@@ -166,7 +166,10 @@ if (score === 5) {
 
 buttonStartDiv.addEventListener('click', (e) => {
 
+if(e.target.textContent === 'Play Again'){
 
+  window.location.reload();
+}
 
 let title = buttonStartDiv.firstElementChild;
 title.style.display = 'none';
