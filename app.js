@@ -51,7 +51,7 @@ li.textContent = arr[i];
     }
 }
 
-
+addToDisplay(getRandomPhraseAsArray(phrases));
 
 function checkLetter(letter){
 
@@ -74,8 +74,13 @@ listItemResult.classList.add('show');
 return match;
 }
 
+
 function checkWin() {
 
+const buttonStart = buttonStartDiv.lastElementChild;
+const buttonReload = document.createElement('button');
+  buttonReload.textContent = 'Play Again';
+  buttonReload.className = '.btn__reset';
 
 const show = document.querySelectorAll('.show');
 const letter = document.querySelectorAll('.letter');
@@ -88,7 +93,10 @@ if(letter.length === show.length) {
    buttonStartDiv.firstElementChild.className = 'win';
    buttonStartDiv.style.display = 'flex';
 
-ul.removeChild(letter);
+buttonStartDiv.removeChild(buttonStart);
+buttonStartDiv.appendChild(buttonReload);
+
+
 
 
  } else {
@@ -101,7 +109,9 @@ ul.removeChild(letter);
      buttonStartDiv.firstElementChild.className = 'win';
      buttonStartDiv.style.display = 'flex';
 
-ul.removeChild(letter);
+     buttonStartDiv.removeChild(buttonStart);
+     buttonStartDiv.appendChild(buttonReload);
+
 
 
    }
@@ -156,7 +166,8 @@ if (score === 5) {
 
 buttonStartDiv.addEventListener('click', (e) => {
 
-addToDisplay(getRandomPhraseAsArray(phrases));
+
+
 let title = buttonStartDiv.firstElementChild;
 title.style.display = 'none';
 buttonStartDiv.style.display = 'none';
