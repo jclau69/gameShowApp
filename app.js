@@ -11,8 +11,7 @@ const qwerty = document.getElementById('qwerty');
 const buttonStartDiv = document.getElementById('overlay');
 const divPhrase = document.getElementById('phrase');
 const ul = divPhrase.firstElementChild;
-
-
+const listItem = ul.children;
 
 
 
@@ -56,7 +55,6 @@ li.textContent = arr[i];
 
 function checkLetter(letter){
 
-const listItem = ul.children;
 
 let match = null;
 
@@ -78,9 +76,9 @@ return match;
 
 function checkWin() {
 
-const letter = document.querySelectorAll('.letter');
-const show = document.querySelectorAll('.show');
 
+const show = document.querySelectorAll('.show');
+const letter = document.querySelectorAll('.letter');
 
 if(letter.length === show.length) {
 
@@ -90,32 +88,27 @@ if(letter.length === show.length) {
    buttonStartDiv.firstElementChild.className = 'win';
    buttonStartDiv.style.display = 'flex';
 
+ul.removeChild(letter);
 
 
  } else {
 
-   if(score >= 4){
+ if(score === 5){
+
 
      buttonStartDiv.firstElementChild.style.display = 'block';
      buttonStartDiv.firstElementChild.textContent = 'Oh no! you loose!';
      buttonStartDiv.firstElementChild.className = 'win';
      buttonStartDiv.style.display = 'flex';
 
+ul.removeChild(letter);
+
+
    }
- }
 
 }
-
-function reLoadPage() {
-
-if(checkWin()) {
-
-window.location.reload();
 }
 
-}
-
-addToDisplay(getRandomPhraseAsArray(phrases));
 
 qwerty.addEventListener('click', (e) => {
 
@@ -155,7 +148,6 @@ if (score === 5) {
 
   checkWin();
 
-
 }
 
 });
@@ -164,8 +156,7 @@ if (score === 5) {
 
 buttonStartDiv.addEventListener('click', (e) => {
 
-reLoadPage();
-
+addToDisplay(getRandomPhraseAsArray(phrases));
 let title = buttonStartDiv.firstElementChild;
 title.style.display = 'none';
 buttonStartDiv.style.display = 'none';
