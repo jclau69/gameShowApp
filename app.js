@@ -110,7 +110,7 @@ function reLoadPage() {
 
 if(checkWin()) {
 
-return;
+window.location.reload();
 }
 
 }
