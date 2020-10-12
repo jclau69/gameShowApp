@@ -68,6 +68,7 @@ if (listItemResult.className === 'letter' && listItemResult.textContent === lett
 match = listItemResult.textContent;
 
 listItemResult.classList.add('show');
+listItemResult.classList.add('transition');
 
 }
 }
