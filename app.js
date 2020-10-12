@@ -75,6 +75,20 @@ listItemResult.classList.add('transition');
 return match;
 }
 
+function reload() {
+
+for (let i = 0; i<listItem.length;i++ ){
+
+let listItemResult = listItem[i];
+
+score = 0;
+listItemResult.classList.remove('show');
+listItemResult.classList.remove('letter');
+listItemResult.classList.remove('space');
+listItemResult.classList.remove('transition');
+
+}
+}
 
 function checkWin() {
 
@@ -98,8 +112,6 @@ buttonStartDiv.removeChild(buttonStart);
 buttonStartDiv.appendChild(buttonReload);
 
 
-
-
  } else {
 
  if(score === 5){
@@ -112,8 +124,6 @@ buttonStartDiv.appendChild(buttonReload);
 
      buttonStartDiv.removeChild(buttonStart);
      buttonStartDiv.appendChild(buttonReload);
-
-
 
    }
 
@@ -133,9 +143,6 @@ qwerty.addEventListener('click', (e) => {
 
 
 if(e.target.tagName === 'BUTTON'){
-
-
-
 
 
 if(e.target.className !== 'chosen'){
@@ -180,7 +187,6 @@ buttonStartDiv.addEventListener('click', (e) => {
 
 
 if(e.target.textContent === 'Play Again'){
-
 
   window.location.reload();
 }
