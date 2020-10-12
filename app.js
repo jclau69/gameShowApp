@@ -51,7 +51,7 @@ li.textContent = arr[i];
     }
 }
 
-addToDisplay(getRandomPhraseAsArray(phrases));
+
 
 function checkLetter(letter){
 
@@ -75,20 +75,21 @@ listItemResult.classList.add('transition');
 return match;
 }
 
+
 function reload() {
 
 for (let i = 0; i<listItem.length;i++ ){
 
-let listItemResult = listItem[i];
-
+let listItems = listItem[i];
 score = 0;
-listItemResult.classList.remove('show');
-listItemResult.classList.remove('letter');
-listItemResult.classList.remove('space');
-listItemResult.classList.remove('transition');
+
+
+ul.removeChild(listItems);
 
 }
 }
+
+
 
 function checkWin() {
 
@@ -188,12 +189,18 @@ buttonStartDiv.addEventListener('click', (e) => {
 
 if(e.target.textContent === 'Play Again'){
 
-  window.location.reload();
+  reload();
+
+  addToDisplay(getRandomPhraseAsArray(phrases));
+
+
 }
 
 let title = buttonStartDiv.firstElementChild;
 title.style.display = 'none';
 buttonStartDiv.style.display = 'none';
+addToDisplay(getRandomPhraseAsArray(phrases));
+
 
 
 
