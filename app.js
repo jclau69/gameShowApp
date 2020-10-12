@@ -132,6 +132,12 @@ qwerty.addEventListener('click', (e) => {
   var newImgLi = document.createElement('img');
 
 
+if(e.target.tagName === 'BUTTON'){
+
+
+
+
+
 if(e.target.className !== 'chosen'){
 
   e.target.className = 'chosen';
@@ -160,7 +166,12 @@ if (score === 5) {
   checkWin();
 
 }
+if(e.target.className === 'chosen'){
 
+e.target.disabled = true;
+
+}
+}
 });
 
 
