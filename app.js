@@ -138,13 +138,8 @@ buttonStartDiv.appendChild(buttonReload);
 
 qwerty.addEventListener('click', (e) => {
 
-
-
-  const divScoreBoard = document.getElementById('scoreboard');
-  const ol = divScoreBoard.firstElementChild;
-  const oldLiChild = ol.firstElementChild;
-  const newLi = document.createElement('li');
-  var newImgLi = document.createElement('img');
+  
+  const img = document.querySelectorAll('.tries img');
 
 
 if(e.target.tagName === 'BUTTON'){
@@ -163,11 +158,8 @@ checkWin();
 
 } else {
 
-ol.removeChild(oldLiChild);
-ol.appendChild(newImgLi);
-newImgLi.style.height = "35px";
-newImgLi.style.width = "30px";
-newImgLi.src = "../images/lostHeart.png " ;
+
+img[0].src = "images/lostHeart.png";
 score = score + 1;
 
 
