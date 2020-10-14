@@ -55,6 +55,7 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+
 }
 
 .main-container {
@@ -169,7 +170,7 @@ button {
   transition: var(--transition);
 
 
-  animation: scale 2s infinite;
+  animation: scale 1s infinite;
   animation-iteration-count: 1;
   animation-delay: 100ms;
 

@@ -107,8 +107,7 @@ function checkWin() {
 
 const buttonStart = buttonStartDiv.lastElementChild;
 const buttonReload = document.createElement('button');
-  buttonReload.textContent = 'Play Again';
-  buttonReload.className = '.btn__reset';
+
 
 const show = document.querySelectorAll('.show');
 const letter = document.querySelectorAll('.letter');
@@ -123,6 +122,8 @@ if(letter.length === show.length) {
 
 buttonStartDiv.removeChild(buttonStart);
 buttonStartDiv.appendChild(buttonReload);
+buttonReload.textContent = 'Play Again';
+buttonReload.className = '.btn__reset';
 
 
  } else {
@@ -137,6 +138,8 @@ buttonStartDiv.appendChild(buttonReload);
 
      buttonStartDiv.removeChild(buttonStart);
      buttonStartDiv.appendChild(buttonReload);
+     buttonReload.textContent = 'Play Again';
+     buttonReload.className = '.btn__reset';
 
    }
 
@@ -185,8 +188,6 @@ e.target.disabled = true;
 }
 }
 });
-
-
 
 
 buttonStartDiv.addEventListener('click', (e) => {
