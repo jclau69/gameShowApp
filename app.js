@@ -5,7 +5,9 @@ var phrases = [
   'a turn up for the books',
   'the world is your oyster',
   'by hook or by crook',
-  'got a lot of nerves'];
+  'got a lot of nerves',
+  'just what the doctor ordered'
+];
 
 const qwerty = document.getElementById('qwerty');
 const buttonStartDiv = document.getElementById('overlay');
@@ -18,6 +20,7 @@ const img = document.querySelectorAll('.tries img');
 
 
 function getRandomPhraseAsArray(arr){
+
 // get a phrase from the Array and split it into characters.
 
 for(let i = 0; i < arr.length; i++){
@@ -33,6 +36,8 @@ return phraseFound.split('');
     }
 
     function addToDisplay(arr) {
+
+// add tag in the ul phrase
 
 for(let i = 0; i < arr.length; i++){
 
@@ -57,6 +62,7 @@ li.textContent = arr[i];
 
 function checkLetter(letter){
 
+//check if the split letter match the letter parameter
 
 let match = null;
 
@@ -80,6 +86,8 @@ return match;
 
 function reload() {
 
+  //reload the page directly without the first page
+
 const buttonSelected = document.getElementsByTagName('button');
 
 
@@ -102,8 +110,9 @@ for(let i = 0; i< tries.length;i++){
 }
 
 
-
 function checkWin() {
+
+  //add the display in case of losing or winning
 
 const buttonStart = buttonStartDiv.lastElementChild;
 const buttonReload = document.createElement('button');
@@ -115,10 +124,10 @@ const letter = document.querySelectorAll('.letter');
 if(letter.length === show.length) {
 
 
-   buttonStartDiv.firstElementChild.style.display = 'block';
-   buttonStartDiv.firstElementChild.textContent = 'Yeeeaaah you won!';
-   buttonStartDiv.firstElementChild.className = 'win';
-   buttonStartDiv.style.display = 'flex';
+buttonStartDiv.firstElementChild.style.display = 'block';
+buttonStartDiv.firstElementChild.textContent = 'Yeeeaaah you won!';
+buttonStartDiv.firstElementChild.className = 'win';
+buttonStartDiv.style.display = 'flex';
 
 buttonStartDiv.removeChild(buttonStart);
 buttonStartDiv.appendChild(buttonReload);
@@ -148,6 +157,8 @@ buttonReload.className = '.btn__reset';
 
 
 qwerty.addEventListener('click', (e) => {
+
+  //check the score, decrease hearts and check winners
 
   const tries = document.querySelectorAll('.tries');
   const img = document.querySelectorAll('.tries img');
@@ -192,6 +203,7 @@ e.target.disabled = true;
 
 buttonStartDiv.addEventListener('click', (e) => {
 
+//reload page when button pressed
 
 if(e.target.textContent === 'Play Again'){
 
