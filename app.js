@@ -138,7 +138,7 @@ buttonStartDiv.appendChild(buttonReload);
 
 qwerty.addEventListener('click', (e) => {
 
-  
+s
   const img = document.querySelectorAll('.tries img');
 
 
