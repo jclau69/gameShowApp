@@ -78,15 +78,19 @@ return match;
 
 function reload() {
 
-for (let i = 0; i<listItem.length;i++ ){
-
-let listItems = listItem[i];
-score = 0;
+const buttonSelected = document.getElementsByTagName('button');
 
 
-ul.removeChild(listItems);
+for(let i=0; i<buttonSelected.length; i++){
+
+let resultButton = buttonSelected[i];
+
+resultButton.className = '';
+resultButton.disabled = false;
 
 }
+score = 0;
+ul.textContent = '';
 }
 
 
@@ -120,7 +124,7 @@ buttonStartDiv.appendChild(buttonReload);
 
      buttonStartDiv.firstElementChild.style.display = 'block';
      buttonStartDiv.firstElementChild.textContent = 'Oh no! you loose!';
-     buttonStartDiv.firstElementChild.className = 'win';
+     buttonStartDiv.firstElementChild.className = 'lose';
      buttonStartDiv.style.display = 'flex';
 
      buttonStartDiv.removeChild(buttonStart);
@@ -184,6 +188,7 @@ e.target.disabled = true;
 
 
 
+
 buttonStartDiv.addEventListener('click', (e) => {
 
 
@@ -191,16 +196,13 @@ if(e.target.textContent === 'Play Again'){
 
   reload();
 
-  addToDisplay(getRandomPhraseAsArray(phrases));
-
-
 }
 
 let title = buttonStartDiv.firstElementChild;
 title.style.display = 'none';
 buttonStartDiv.style.display = 'none';
-addToDisplay(getRandomPhraseAsArray(phrases));
 
+addToDisplay(getRandomPhraseAsArray(phrases));
 
 
 
