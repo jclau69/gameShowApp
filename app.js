@@ -12,6 +12,8 @@ const buttonStartDiv = document.getElementById('overlay');
 const divPhrase = document.getElementById('phrase');
 const ul = divPhrase.firstElementChild;
 const listItem = ul.children;
+const tries = document.querySelectorAll('.tries');
+const img = document.querySelectorAll('.tries img');
 
 
 
@@ -91,6 +93,12 @@ resultButton.disabled = false;
 }
 score = 0;
 ul.textContent = '';
+
+for(let i = 0; i< tries.length;i++){
+
+  tries[i].className = 'tries';
+  img[i].src = '../images/liveHeart.png';
+}
 }
 
 
@@ -138,7 +146,7 @@ buttonStartDiv.appendChild(buttonReload);
 
 qwerty.addEventListener('click', (e) => {
 
-s
+  const tries = document.querySelectorAll('.tries');
   const img = document.querySelectorAll('.tries img');
 
 
@@ -158,8 +166,8 @@ checkWin();
 
 } else {
 
-
-img[0].src = "images/lostHeart.png";
+tries[0].className = '';
+img[0].src = "../images/lostHeart.png";
 score = score + 1;
 
 
